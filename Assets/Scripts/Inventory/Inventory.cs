@@ -7,17 +7,19 @@ namespace GameEngine
     //Data
     public sealed class Inventory
     {
+        public Action<Item> OnItemAdded;
+        public Action<Item> OnItemRemoved;
 
-        public int Width { get; }
-        public int Height { get; }
+        public int width { get; }
+        public int height { get; }
 
         public readonly Item[,] cells;
         public readonly Dictionary<Item, List<Vector2Int>> itemMap;
 
         public Inventory(int width, int height)
         {
-            this.Width = width;
-            this.Height = height;
+            this.width = width;
+            this.height = height;
             this.cells = new Item[width, height];
             this.itemMap = new Dictionary<Item, List<Vector2Int>>();
         }
@@ -37,7 +39,7 @@ namespace GameEngine
             int positionX = position.x;
             int positionY = position.y;
             
-            if (positionX >= 0 && positionX < this.Width && positionY >= 0 && positionY < this.Height)
+            if (positionX >= 0 && positionX < this.width && positionY >= 0 && positionY < this.height)
             {
                 item = this.cells[positionX, positionY];
                 return true;
@@ -52,7 +54,7 @@ namespace GameEngine
             int positionX = position.x;
             int positionY = position.y;
             
-            if (positionX >= 0 && positionX < this.Width && positionY >= 0 && positionY < this.Height)
+            if (positionX >= 0 && positionX < this.width && positionY >= 0 && positionY < this.height)
             {
                 return this.cells[positionX, positionY];
             }

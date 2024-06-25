@@ -10,30 +10,25 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3d1e5c43376f4bf4bf62ada4a79f92b6, type: 3}
-  m_Name: Shield
+  m_Name: Armor
   m_EditorClassIdentifier: 
   item:
-    <Title>k__BackingField: Shield
-    <Description>k__BackingField: For armor
+    <Title>k__BackingField: Armor
+    <Description>k__BackingField: armor
     <Icon>k__BackingField: {fileID: 0}
     <Size>k__BackingField: {x: 1, y: 1}
     <Flags>k__BackingField: 2
     components:
-    - rid: 7990119693568966673
-    - rid: 7990119698675007488
-    - rid: 7990119698675007492
+    - rid: 7990119698675007489
+    - rid: 7990119698675007490
   references:
     version: 2
     RefIds:
-    - rid: 7990119693568966673
+    - rid: 7990119698675007489
       type: {class: EquippableComponent, ns: GameEngine, asm: Inventory}
       data:
         isEquipped: 0
-    - rid: 7990119698675007488
+    - rid: 7990119698675007490
       type: {class: ArmorComponent, ns: GameEngine, asm: Inventory}
       data:
-        _armor: 2
-    - rid: 7990119698675007492
-      type: {class: PowerComponent, ns: GameEngine, asm: Inventory}
-      data:
-        _power: 1
+        _armor: 4

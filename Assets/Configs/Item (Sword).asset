@@ -27,7 +27,7 @@ MonoBehaviour:
     - rid: 5031450113277952002
       type: {class: PowerComponent, ns: GameEngine, asm: Inventory}
       data:
-        power: 2
+        _power: 3
     - rid: 7990119693568966674
       type: {class: EquippableComponent, ns: GameEngine, asm: Inventory}
       data:

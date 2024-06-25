@@ -1,13 +1,15 @@
 ﻿using System;
 using GameEngine;
+using JetBrains.Annotations;
 using UnityEngine;
 
 namespace Equipment.Scripts
 {
+    [UsedImplicitly]
     public sealed class ItemEquipper
     {
-        public Action<Item> OnItemEquiped;
-        public Action<Item> OnItemUnequiped;
+        public Action<Item> onItemEquiped;
+        public Action<Item> onItemUnequiped;
         
         private readonly Inventory _inventory;
 
@@ -28,7 +30,7 @@ namespace Equipment.Scripts
                 return false;
             
             component.isEquipped = true;
-            OnItemEquiped?.Invoke(item);
+            onItemEquiped?.Invoke(item);
             
             return true;
         }
@@ -45,7 +47,7 @@ namespace Equipment.Scripts
                 return false;
             
             component.isEquipped = false;
-            OnItemUnequiped?.Invoke(item);
+            onItemUnequiped?.Invoke(item);
             
             return true;
         }

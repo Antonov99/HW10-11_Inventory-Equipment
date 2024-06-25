@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3d1e5c43376f4bf4bf62ada4a79f92b6, type: 3}
-  m_Name: Shield
+  m_Name: Boots
   m_EditorClassIdentifier: 
   item:
-    <Title>k__BackingField: Shield
+    <Title>k__BackingField: Boots
     <Description>k__BackingField: For armor
     <Icon>k__BackingField: {fileID: 0}
     <Size>k__BackingField: {x: 1, y: 1}
@@ -21,7 +21,7 @@ MonoBehaviour:
     components:
     - rid: 7990119693568966673
     - rid: 7990119698675007488
-    - rid: 7990119698675007492
+    - rid: 7990119698675007491
   references:
     version: 2
     RefIds:
@@ -32,8 +32,8 @@ MonoBehaviour:
     - rid: 7990119698675007488
       type: {class: ArmorComponent, ns: GameEngine, asm: Inventory}
       data:
-        _armor: 2
-    - rid: 7990119698675007492
-      type: {class: PowerComponent, ns: GameEngine, asm: Inventory}
+        _armor: 1
+    - rid: 7990119698675007491
+      type: {class: SpeedComponent, ns: GameEngine, asm: Inventory}
       data:
-        _power: 1
+        _speed: 2

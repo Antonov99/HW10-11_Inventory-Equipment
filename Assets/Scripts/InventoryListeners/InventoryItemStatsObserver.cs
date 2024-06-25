@@ -20,14 +20,14 @@ namespace GameEngine
 
         public void Initialize()
         {
-            _itemEquipper.OnItemEquiped += OnItemEquiped;
-            _itemEquipper.OnItemUnequiped += OnItemUnequiped;
+            _itemEquipper.onItemEquiped += OnItemEquiped;
+            _itemEquipper.onItemUnequiped += OnItemUnequiped;
         }
 
         public void Dispose()
         {
-            _itemEquipper.OnItemEquiped -= OnItemEquiped;
-            _itemEquipper.OnItemUnequiped -= OnItemUnequiped;
+            _itemEquipper.onItemEquiped -= OnItemEquiped;
+            _itemEquipper.onItemUnequiped -= OnItemUnequiped;
         }
 
         private void OnItemEquiped(Item item)

@@ -32,6 +32,7 @@ namespace GameEngine
                 inventoryCells[points.x, points.y] = null;
             }
             
+            _inventory.OnItemRemoved?.Invoke(item);
             return true;
         }
     }
