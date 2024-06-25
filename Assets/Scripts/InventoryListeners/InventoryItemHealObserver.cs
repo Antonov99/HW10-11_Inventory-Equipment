@@ -29,7 +29,7 @@ namespace GameEngine
         {
             if (item.TryGetComponent(out HealingComponent healingComponent))
             {
-                _player.Health += healingComponent.HealingPoints;
+                _player.health += healingComponent.HealingPoints;
                 Debug.Log($"HEALING: +{healingComponent.HealingPoints}");
             }
         }

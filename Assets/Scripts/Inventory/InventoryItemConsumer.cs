@@ -31,9 +31,9 @@ namespace GameEngine
             return true;
         }
 
-        public bool Consume(Vector2Int posiiton)
+        public bool Consume(Vector2Int position)
         {
-            if (_inventory.TryGetItem(posiiton, out Item item))
+            if (_inventory.TryGetItem(position, out Item item))
             {
                 return this.Consume(item);
             }
@@ -48,7 +48,9 @@ namespace GameEngine
                 return false;
             }
             
-            _itemRemover.Remove(item);
+            if(!_itemRemover.Remove(item))
+                return false;
+            
             this.OnItemConsumed?.Invoke(item);
             return true;
         }

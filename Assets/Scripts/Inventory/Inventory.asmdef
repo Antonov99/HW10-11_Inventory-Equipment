@@ -2,7 +2,8 @@
     "name": "Inventory",
     "rootNamespace": "",
     "references": [
-        "GUID:0d8beb7f090555447a6cf5ce9e54dbb4"
+        "GUID:0d8beb7f090555447a6cf5ce9e54dbb4",
+        "GUID:1416e13bb6b4ef5409e86874f693797d"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

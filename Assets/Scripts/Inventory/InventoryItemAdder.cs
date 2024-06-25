@@ -61,7 +61,6 @@ namespace GameEngine
             }
 
             itemMap.Add(item, points);
-            this.inventory.OnItemAdded?.Invoke(item);
             return true;
         }
     }

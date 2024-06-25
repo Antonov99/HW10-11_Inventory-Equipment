@@ -7,8 +7,6 @@ namespace GameEngine
     //Data
     public sealed class Inventory
     {
-        public Action<Item> OnItemAdded;
-        public Action<Item> OnItemRemoved;
 
         public int Width { get; }
         public int Height { get; }
@@ -22,6 +20,16 @@ namespace GameEngine
             this.Height = height;
             this.cells = new Item[width, height];
             this.itemMap = new Dictionary<Item, List<Vector2Int>>();
+        }
+        
+        public bool HasItem(int x, int y)
+        {
+            return this.cells[x, y] != null;
+        }
+        
+        public bool HasItem(Vector2Int position)
+        {
+            return this.cells[position.x, position.y] != null;
         }
 
         public bool TryGetItem(Vector2Int position, out Item item)
@@ -49,7 +57,7 @@ namespace GameEngine
                 return this.cells[positionX, positionY];
             }
 
-            throw new Exception($"Invalid posiiton {position}! Out off Range! ");
+            throw new Exception($"Invalid position {position}! Out off Range! ");
         }
     }
 }

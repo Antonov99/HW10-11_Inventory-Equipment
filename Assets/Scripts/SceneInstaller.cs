@@ -1,3 +1,4 @@
+using Equipment.Scripts;
 using UnityEngine;
 using Zenject;
 
@@ -10,11 +11,13 @@ namespace GameEngine
         
         public override void InstallBindings()
         {
-            InventorySystemInstaller.Install(this.Container);
-            this.Container.Bind<Player>().FromInstance(_player).AsSingle().NonLazy();
+            InventorySystemInstaller.Install(Container);
+            Container.Bind<Player>().FromInstance(_player).AsSingle().NonLazy();
             
-            this.Container.BindInterfacesTo<InventoryItemPowerObserver>().AsCached().NonLazy();
-            this.Container.BindInterfacesTo<InventoryItemHealObserver>().AsCached().NonLazy();
+            Container.BindInterfacesTo<InventoryItemStatsObserver>().AsCached().NonLazy();
+            Container.BindInterfacesTo<InventoryItemHealObserver>().AsCached().NonLazy();
+
+            Container.Bind<ItemEquipper>().AsSingle().NonLazy();
         }
     }
 }

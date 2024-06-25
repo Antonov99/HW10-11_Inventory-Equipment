@@ -31,7 +31,7 @@ namespace GameEngine
             {
                 inventoryCells[points.x, points.y] = null;
             }
-
+            
             return true;
         }
     }

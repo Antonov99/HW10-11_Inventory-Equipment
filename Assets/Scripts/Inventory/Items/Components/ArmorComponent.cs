@@ -1,15 +1,15 @@
-using System;
+﻿using System;
 using UnityEngine;
 
 namespace GameEngine
 {
     [Serializable]
-    public sealed class PowerComponent : IItemComponent
+    public sealed class ArmorComponent : IItemComponent
     {
-        public int power => _power;
+        public int armor => _armor;
         
         [SerializeField]
-        private int _power;
+        private int _armor;
         
         public IItemComponent Clone()
         {
