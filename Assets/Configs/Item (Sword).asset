@@ -19,8 +19,8 @@ MonoBehaviour:
     <Size>k__BackingField: {x: 2, y: 2}
     <Flags>k__BackingField: 2
     components:
+    - rid: 7990119739529625603
     - rid: 5031450113277952002
-    - rid: 7990119693568966674
   references:
     version: 2
     RefIds:
@@ -28,7 +28,8 @@ MonoBehaviour:
       type: {class: PowerComponent, ns: GameEngine, asm: Inventory}
       data:
         _power: 3
-    - rid: 7990119693568966674
-      type: {class: EquippableComponent, ns: GameEngine, asm: Inventory}
+    - rid: 7990119739529625603
+      type: {class: EquipableComponent, ns: GameEngine, asm: Inventory}
       data:
         isEquipped: 0
+        type: Weapon

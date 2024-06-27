@@ -19,16 +19,12 @@ MonoBehaviour:
     <Size>k__BackingField: {x: 1, y: 1}
     <Flags>k__BackingField: 2
     components:
-    - rid: 7990119693568966673
+    - rid: 7990119739529625601
     - rid: 7990119698675007488
     - rid: 7990119698675007491
   references:
     version: 2
     RefIds:
-    - rid: 7990119693568966673
-      type: {class: EquippableComponent, ns: GameEngine, asm: Inventory}
-      data:
-        isEquipped: 0
     - rid: 7990119698675007488
       type: {class: ArmorComponent, ns: GameEngine, asm: Inventory}
       data:
@@ -37,3 +33,8 @@ MonoBehaviour:
       type: {class: SpeedComponent, ns: GameEngine, asm: Inventory}
       data:
         _speed: 2
+    - rid: 7990119739529625601
+      type: {class: EquipableComponent, ns: GameEngine, asm: Inventory}
+      data:
+        isEquipped: 0
+        type: Boots

@@ -19,16 +19,17 @@ MonoBehaviour:
     <Size>k__BackingField: {x: 1, y: 1}
     <Flags>k__BackingField: 2
     components:
-    - rid: 7990119698675007489
+    - rid: 7990119739529625602
     - rid: 7990119698675007490
   references:
     version: 2
     RefIds:
-    - rid: 7990119698675007489
-      type: {class: EquippableComponent, ns: GameEngine, asm: Inventory}
-      data:
-        isEquipped: 0
     - rid: 7990119698675007490
       type: {class: ArmorComponent, ns: GameEngine, asm: Inventory}
       data:
         _armor: 3
+    - rid: 7990119739529625602
+      type: {class: EquipableComponent, ns: GameEngine, asm: Inventory}
+      data:
+        isEquipped: 0
+        type: Helmet

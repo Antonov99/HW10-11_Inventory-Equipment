@@ -12,8 +12,8 @@ namespace GameEngine
         {
             return new StackableComponent
             {
-                current = this.current,
-                max = this.max
+                current = current,
+                max = max
             };
         }
     }
