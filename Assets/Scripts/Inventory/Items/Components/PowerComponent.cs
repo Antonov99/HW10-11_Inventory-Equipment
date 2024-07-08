@@ -9,7 +9,7 @@ namespace GameEngine
         public int power => _power;
         
         [SerializeField]
-        private int _power;
+        private int _power=3;
         
         public IItemComponent Clone()
         {

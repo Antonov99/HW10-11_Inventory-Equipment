@@ -1,9 +1,11 @@
 using System;
+using JetBrains.Annotations;
 using UnityEngine;
 using Zenject;
 
 namespace GameEngine
 {
+    [UsedImplicitly]
     public sealed class InventoryItemHealObserver : IInitializable, IDisposable
     {
         private readonly InventoryItemConsumer _itemConsumer;

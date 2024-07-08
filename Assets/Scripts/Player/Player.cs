@@ -1,8 +1,10 @@
+using System;
 using UnityEngine;
 
 namespace GameEngine
 {
-    public sealed class Player : MonoBehaviour
+    [Serializable]
+    public sealed class Player
     {
         [field: SerializeField]
         public int health { get; set; } = 5;

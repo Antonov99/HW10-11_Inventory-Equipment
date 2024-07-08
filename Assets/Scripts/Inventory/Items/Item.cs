@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace GameEngine
@@ -7,28 +8,28 @@ namespace GameEngine
     public sealed class Item
     {
         [field: SerializeField]
-        public string Title { get; set;}
+        public string Title { get; set; }
 
         [field: SerializeField]
-        public string Description { get; set;}
+        public string Description { get; set; }
 
         [field: SerializeField]
-        public Sprite Icon { get; set;}
+        public Sprite Icon { get; set; }
 
         [field: SerializeField]
-        public Vector2Int Size { get; set;}
+        public Vector2Int Size { get; set; }
 
         [field: SerializeField]
         public ItemFlags Flags { get; set; }
 
         [SerializeReference]
-        private IItemComponent[] components;
+        public List<IItemComponent> Components = new List<IItemComponent>();
 
         public bool TryGetComponent<T>(out T component)
         {
-            for (int i = 0, count = this.components.Length; i < count; i++)
+            foreach (var comp in this.Components)
             {
-                if (this.components[i] is T tComponent)
+                if (comp is T tComponent)
                 {
                     component = tComponent;
                     return true;
@@ -48,21 +49,25 @@ namespace GameEngine
                 Icon = this.Icon,
                 Size = this.Size,
                 Flags = this.Flags,
-                components = this.CloneComponents()
+                Components = this.CloneComponents()
             };
         }
 
-        private IItemComponent[] CloneComponents()
+        private List<IItemComponent> CloneComponents()
         {
-            int length = this.components.Length;
-            var result = new IItemComponent[length];
+            var result = new List<IItemComponent>(this.Components.Count);
 
-            for (int i = 0; i < length; i++)
+            foreach (var component in this.Components)
             {
-                result[i] = this.components[i].Clone();
+                result.Add(component.Clone());
             }
 
             return result;
+        }
+
+        public void AddComponent(IItemComponent component)
+        {
+            Components.Add(component);
         }
     }
 }

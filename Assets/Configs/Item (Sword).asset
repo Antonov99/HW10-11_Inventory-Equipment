@@ -18,18 +18,18 @@ MonoBehaviour:
     <Icon>k__BackingField: {fileID: 0}
     <Size>k__BackingField: {x: 2, y: 2}
     <Flags>k__BackingField: 2
-    components:
-    - rid: 7990119739529625603
-    - rid: 5031450113277952002
+    Components:
+    - rid: 6654362213136728064
+    - rid: 6654362213136728065
   references:
     version: 2
     RefIds:
-    - rid: 5031450113277952002
-      type: {class: PowerComponent, ns: GameEngine, asm: Inventory}
-      data:
-        _power: 3
-    - rid: 7990119739529625603
+    - rid: 6654362213136728064
       type: {class: EquipableComponent, ns: GameEngine, asm: Inventory}
       data:
         isEquipped: 0
-        type: Weapon
+        type: '"Weapon"'
+    - rid: 6654362213136728065
+      type: {class: PowerComponent, ns: GameEngine, asm: Inventory}
+      data:
+        _power: 3

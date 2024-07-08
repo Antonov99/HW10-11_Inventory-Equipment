@@ -1,0 +1,18 @@
+{
+    "name": "Listeners",
+    "rootNamespace": "",
+    "references": [
+        "GUID:1416e13bb6b4ef5409e86874f693797d",
+        "GUID:7775c7dfc8b96a9428ce98d2a415a4e6",
+        "GUID:8935a3ace6bec41ef96c007a557be57c"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
