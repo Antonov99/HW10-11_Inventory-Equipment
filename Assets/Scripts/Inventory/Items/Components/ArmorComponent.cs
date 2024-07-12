@@ -9,7 +9,7 @@ namespace GameEngine
         public int armor => _armor;
         
         [SerializeField]
-        private int _armor;
+        private int _armor=2;
         
         public IItemComponent Clone()
         {

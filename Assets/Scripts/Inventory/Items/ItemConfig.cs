@@ -13,7 +13,7 @@ namespace GameEngine
 
         public Item InstantiateItem()
         {
-            return this.item.Clone();
+            return item.Clone();
         }
     }
 }

@@ -9,16 +9,16 @@ namespace GameEngine
 
         public InventoryItemAdder(Inventory inventory)
         {
-            this._inventory = inventory;
+            _inventory = inventory;
         }
 
         private bool CanAddItem(Item item, Vector2Int position)
         {
             Vector2Int itemSize = item.Size;
-            Item[,] cells = this._inventory.cells;
+            Item[,] cells = _inventory.cells;
             
-            if (position.x + itemSize.x >= this._inventory.width ||
-                position.y + itemSize.y >= this._inventory.height ||
+            if (position.x + itemSize.x >= _inventory.width ||
+                position.y + itemSize.y >= _inventory.height ||
                 position.x < 0 || position.y < 0)
             {
                 return false;
@@ -40,7 +40,7 @@ namespace GameEngine
 
         public bool AddItem(Item item, Vector2Int position)
         {
-            if (!this.CanAddItem(item, position))
+            if (!CanAddItem(item, position))
             {
                 return false;
             }
@@ -48,8 +48,8 @@ namespace GameEngine
             Vector2Int itemSize = item.Size;
             List<Vector2Int> points = new List<Vector2Int>(itemSize.x * itemSize.y);
 
-            Item[,] cells = this._inventory.cells;
-            Dictionary<Item, List<Vector2Int>> itemMap = this._inventory.itemMap;
+            Item[,] cells = _inventory.cells;
+            Dictionary<Item, List<Vector2Int>> itemMap = _inventory.itemMap;
             
             for (int x = position.x; x < position.x + itemSize.x; x++)
             {
@@ -61,7 +61,7 @@ namespace GameEngine
             }
 
             itemMap.Add(item, points);
-            this._inventory.OnItemAdded?.Invoke(item);
+            _inventory.OnItemAdded?.Invoke(item);
             return true;
         }
     }

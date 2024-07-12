@@ -35,7 +35,7 @@ namespace GameEngine
         {
             if (_inventory.TryGetItem(position, out Item item))
             {
-                return this.Consume(item);
+                return Consume(item);
             }
 
             return false;
@@ -43,7 +43,7 @@ namespace GameEngine
 
         public bool Consume(Item item)
         {
-            if (!this.CanConsume(item))
+            if (!CanConsume(item))
             {
                 return false;
             }
@@ -51,7 +51,7 @@ namespace GameEngine
             if(!_itemRemover.Remove(item))
                 return false;
             
-            this.OnItemConsumed?.Invoke(item);
+            OnItemConsumed?.Invoke(item);
             return true;
         }
     }

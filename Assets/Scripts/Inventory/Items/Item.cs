@@ -27,7 +27,7 @@ namespace GameEngine
 
         public bool TryGetComponent<T>(out T component)
         {
-            foreach (var comp in this.Components)
+            foreach (var comp in Components)
             {
                 if (comp is T tComponent)
                 {
@@ -44,20 +44,20 @@ namespace GameEngine
         {
             return new Item
             {
-                Title = this.Title,
-                Description = this.Description,
-                Icon = this.Icon,
-                Size = this.Size,
-                Flags = this.Flags,
-                Components = this.CloneComponents()
+                Title = Title,
+                Description = Description,
+                Icon = Icon,
+                Size = Size,
+                Flags = Flags,
+                Components = CloneComponents()
             };
         }
 
         private List<IItemComponent> CloneComponents()
         {
-            var result = new List<IItemComponent>(this.Components.Count);
+            var result = new List<IItemComponent>(Components.Count);
 
-            foreach (var component in this.Components)
+            foreach (var component in Components)
             {
                 result.Add(component.Clone());
             }

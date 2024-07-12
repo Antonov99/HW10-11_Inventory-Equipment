@@ -20,18 +20,18 @@ namespace GameEngine
         {
             this.width = width;
             this.height = height;
-            this.cells = new Item[width, height];
-            this.itemMap = new Dictionary<Item, List<Vector2Int>>();
+            cells = new Item[width, height];
+            itemMap = new Dictionary<Item, List<Vector2Int>>();
         }
         
         public bool HasItem(int x, int y)
         {
-            return this.cells[x, y] != null;
+            return cells[x, y] != null;
         }
         
         public bool HasItem(Vector2Int position)
         {
-            return this.cells[position.x, position.y] != null;
+            return cells[position.x, position.y] != null;
         }
 
         public bool TryGetItem(Vector2Int position, out Item item)
@@ -39,9 +39,9 @@ namespace GameEngine
             int positionX = position.x;
             int positionY = position.y;
             
-            if (positionX >= 0 && positionX < this.width && positionY >= 0 && positionY < this.height)
+            if (positionX >= 0 && positionX < width && positionY >= 0 && positionY < height)
             {
-                item = this.cells[positionX, positionY];
+                item = cells[positionX, positionY];
                 return true;
             }
 
@@ -54,9 +54,9 @@ namespace GameEngine
             int positionX = position.x;
             int positionY = position.y;
             
-            if (positionX >= 0 && positionX < this.width && positionY >= 0 && positionY < this.height)
+            if (positionX >= 0 && positionX < width && positionY >= 0 && positionY < height)
             {
-                return this.cells[positionX, positionY];
+                return cells[positionX, positionY];
             }
 
             throw new Exception($"Invalid position {position}! Out off Range! ");
